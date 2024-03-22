@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeflex/primeflex.css";
+
+html {
+  background-color: rgb(244, 236, 222);
+  color: rgb(52, 52, 52);
+}
+
+h1 {
+  font-family: "Taviraj";
+  font-weight: 400;
+  color: rgb(52, 52, 52);
+}

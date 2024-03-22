@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "kind-preorder": {
+      "hosting": {
+        "kind-preorder": [
+          "kind-preorder"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "kind-preorder"
+  }
+}

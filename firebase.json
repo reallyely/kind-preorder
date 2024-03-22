@@ -1,0 +1,11 @@
+{
+  "hosting": [
+    {
+      "target": "kind-preorder",
+      "source": ".",
+      "frameworksBackend": {
+        "region": "us-east1"
+      }
+    }
+  ]
+}

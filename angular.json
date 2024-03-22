@@ -93,6 +93,23 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "kind-preorder:build:production",
+              "serveTarget": "kind-preorder:serve:production"
+            },
+            "development": {
+              "buildTarget": "kind-preorder:build:development",
+              "serveTarget": "kind-preorder:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
