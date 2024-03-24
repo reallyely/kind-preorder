@@ -2,6 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.0.
 
+We're tracking our work over in [Linear](https://linear.app/kind-pre-order)
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
@@ -27,5 +29,3 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 Run `ng deploy` to deploy to Firebase
 
 ## Work Tracking
-
-https://linear.app/kind-pre-order
