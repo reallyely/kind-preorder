@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { collection, collectionData, Firestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-import { MenuItem } from '../../domain/MenuItem';
+import { MenuItem } from '../../../domain/MenuItem';
 
 @Injectable({
   providedIn: 'root',

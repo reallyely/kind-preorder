@@ -2,6 +2,7 @@ export interface MenuItem {
   name: string;
   description: string;
   options: MenuItemOption[];
+  image: string;
 }
 
 export interface MenuItemOption {
