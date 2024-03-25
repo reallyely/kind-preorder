@@ -1,0 +1,40 @@
+<p-card header="New Menu Item">
+  <form [formGroup]="newMenuItemForm" (submit)="submitNewMenuItem()">
+    <div class="flex flex-column gap-2">
+      <label for="name">Name</label>
+      <input pInputText name="name" type="text" formControlName="name" />
+
+      <label for="description">Description</label>
+      <input
+        pInputText
+        name="description"
+        type="text"
+        formControlName="description"
+      />
+
+      <label for="options">Options</label>
+      <p-autoComplete
+        name="options"
+        formControlName="options"
+        [suggestions]="filteredOptions"
+        (completeMethod)="filter($event)"
+        [multiple]="true"
+        [dropdown]="true"
+      ></p-autoComplete>
+
+      <label for="image">Image</label>
+      <p-fileUpload
+        mode="basic"
+        chooseLabel="Upload Image"
+        name="image"
+        url="https://www.primefaces.org/cdn/api/upload.php"
+        accept="image/*"
+        (onUpload)="onUpload($event)"
+      />
+
+      <div class="flex flex-row justify-content-end">
+        <button pButton type="submit" class="primary">Add Menu Item</button>
+      </div>
+    </div>
+  </form>
+</p-card>

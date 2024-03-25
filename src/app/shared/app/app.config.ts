@@ -1,16 +1,19 @@
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
-import { routes } from './app.routes';
-import { provideClientHydration } from '@angular/platform-browser';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { provideClientHydration } from '@angular/platform-browser';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     provideClientHydration(),
+    provideAnimations(),
+    // FIREBASE
     importProvidersFrom(
       provideFirebaseApp(() =>
         initializeApp({
@@ -20,8 +23,8 @@ export const appConfig: ApplicationConfig = {
           apiKey: 'AIzaSyBaigt7gl4ZlZVgtc02IwR5dzC31Qagoa4',
           authDomain: 'kind-preorder.firebaseapp.com',
           messagingSenderId: '677443521856',
-        })
-      )
+        }),
+      ),
     ),
     importProvidersFrom(provideAuth(() => getAuth())),
     importProvidersFrom(provideFirestore(() => getFirestore())),
