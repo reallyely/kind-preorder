@@ -1,4 +1,18 @@
 <section>
   <h2>All Menu Items</h2>
   <a routerLink="new"> <button>Add Menu Item</button></a>
+
+  @if (route.isActive('/store/menu-item/new', false)) {
+  <form [formGroup]="newMenuItemForm"
+    (submit)="submitNewMenuItem()">
+    <label for="name">Name</label>
+    <input type="text"
+      formControlName="name">
+    <label for="name">description</label>
+    <input type="text"
+      formControlName="name">
+    <button type="submit"
+      class="primary">Add</button>
+  </form>
+  }
 </section>
