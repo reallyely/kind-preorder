@@ -12,25 +12,34 @@
         formControlName="description"
       />
 
+      <!-- TODO: We want to be able to create options on the spot -->
       <label for="options">Options</label>
       <p-autoComplete
         name="options"
         formControlName="options"
-        [suggestions]="filteredOptions"
-        (completeMethod)="filter($event)"
+        [suggestions]="filteredOptions()"
+        (completeMethod)="filterMenuItemOptions($event)"
         [multiple]="true"
         [dropdown]="true"
       ></p-autoComplete>
 
       <label for="image">Image</label>
+      @if (file) {
+      <div><p-image width="100px" [src]="image" [preview]="true" /></div>
+      } @else {
       <p-fileUpload
         mode="basic"
         chooseLabel="Upload Image"
         name="image"
-        url="https://www.primefaces.org/cdn/api/upload.php"
         accept="image/*"
-        (onUpload)="onUpload($event)"
-      />
+        [auto]="true"
+        [multiple]="false"
+        [customUpload]="true"
+        [maxFileSize]="500000"
+        (uploadHandler)="onUpload($event)"
+      >
+      </p-fileUpload>
+      }
 
       <div class="flex flex-row justify-content-end">
         <button pButton type="submit" class="primary">Add Menu Item</button>
