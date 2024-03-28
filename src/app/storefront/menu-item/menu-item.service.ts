@@ -1,18 +1,14 @@
-import { MenuItem } from '@/MenuItem';
-import { inject, Injectable } from '@angular/core';
 import {
+  Firestore,
   addDoc,
   collection,
   collectionData,
-  Firestore,
 } from '@angular/fire/firestore';
-import {
-  getDownloadURL,
-  ref,
-  Storage,
-  StorageReference,
-} from '@angular/fire/storage';
-import { map, Observable } from 'rxjs';
+import { Injectable, inject } from '@angular/core';
+import { Observable, map } from 'rxjs';
+import { Storage, getDownloadURL, ref } from '@angular/fire/storage';
+
+import { MenuItem } from '@/MenuItem';
 
 @Injectable({
   providedIn: 'root',
@@ -37,7 +33,7 @@ export class MenuItemService {
             image,
           });
         }
-        return (await Promise.all(mappedItems)) as MenuItem[];
+        return mappedItems;
       }),
     );
   }
