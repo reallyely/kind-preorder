@@ -1,18 +1,20 @@
-<section>
-  <h2>All Menu Items</h2>
-  <a routerLink="new"> <button>Add Menu Item</button></a>
+<section class="flex flex-column gap-2">
+  <div class="flex flex-row justify-content-between align-items-center">
+    <h2>All Menu Items</h2>
+    <a routerLink="new"><button pButton>Add Menu Item</button></a>
+  </div>
 
   @if (route.isActive('/store/menu-item/new', false)) {
-  <form [formGroup]="newMenuItemForm"
-    (submit)="submitNewMenuItem()">
-    <label for="name">Name</label>
-    <input type="text"
-      formControlName="name">
-    <label for="name">description</label>
-    <input type="text"
-      formControlName="name">
-    <button type="submit"
-      class="primary">Add</button>
-  </form>
+  <app-menu-item-form />
+  } @else {
+  <ul>
+    @for (menuItem of menuItems; track $index) {
+    <li>
+      {{ menuItem.name }}
+      <img [src]="menuItem.image" width="50px" height="50px" />
+    </li>
+    }
+  </ul>
+
   }
 </section>
