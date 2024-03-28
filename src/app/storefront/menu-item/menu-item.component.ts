@@ -1,10 +1,12 @@
-import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import { MenuItem } from 'domain/MenuItem';
+
 import { ButtonModule } from 'primeng/button';
+import { CommonModule } from '@angular/common';
+import { MenuItem } from 'domain/MenuItem';
 import { MenuItemFormComponent } from '~/storefront/menu-item/menu-item-form/menu-item-form.component';
 import { MenuItemService } from '~/storefront/menu-item/menu-item.service';
+
 @Component({
   selector: 'app-menu-item',
   standalone: true,
